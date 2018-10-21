@@ -12,11 +12,17 @@ class ViewController: UIViewController {
     
     let explictStruct = GenericStruct<Bool>()
     let implicitStruct = GenericStruct(property: "Bob")
+    var listDelegate = AddNameClass()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SomeClass.introduce() // I'm Bob
-       
+        SomeClass.introduce()
+        
+    let human = HumanClass(name:"Angel", delegate: listDelegate)
+        human.updateList(name: "Iliya")
+        human.updateList(name: "Legion")
+        print(listDelegate.listName)
     }
 
     override func didReceiveMemoryWarning() {
