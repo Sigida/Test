@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let explictStruct = GenericStruct<Bool>()
+    let implicitStruct = GenericStruct(property: "Bob")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        SomeClass.introduce() // I'm Bob
+       
     }
 
     override func didReceiveMemoryWarning() {
